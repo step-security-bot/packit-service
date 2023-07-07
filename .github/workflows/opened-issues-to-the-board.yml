@@ -4,10 +4,18 @@ on:
   issues:
     types: [opened]
 
+permissions:
+  contents: read
+
 jobs:
   add-new-issue-to-the-kanban-board:
     runs-on: ubuntu-latest
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+
       - uses: actions/add-to-project@v0.3.0
         with:
           project-url: https://github.com/orgs/packit/projects/7

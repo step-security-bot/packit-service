@@ -4,6 +4,9 @@ on:
   issues:
     types: [opened]
 
+permissions:
+  contents: read
+
 jobs:
   add-new-issue-to-the-kanban-board:
     runs-on: ubuntu-latest

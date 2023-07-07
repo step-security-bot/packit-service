@@ -6,6 +6,9 @@ on:
       - main
       - stable
 
+permissions:
+  contents: read
+
 jobs:
   build-and-push:
     # To not run in forks
